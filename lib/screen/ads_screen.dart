@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_assaignment_1/utils/const.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../utils/colors.dart';
 import '../widgets/grid_single_product.dart';
 
 class AdsScreen extends StatelessWidget {
@@ -8,50 +11,48 @@ class AdsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size= MediaQuery.of(context).size;
+    var textTheme = Theme.of(context).textTheme;
     return DefaultTabController(
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          elevation: 0,
-          toolbarHeight: 100,
-          backgroundColor: Colors.white,
-          title: const Text(
+
+          title:  Text(
             "My Ads",
-            style: TextStyle(color: Colors.black),
+            style: textTheme.bodyLarge,
           ),
           centerTitle: true,
           bottom: TabBar(
-            indicatorWeight: 4,
-             labelPadding: EdgeInsets.all(20),
+            indicatorWeight: 3.h,
+             labelPadding: const EdgeInsets.all(20).r,
               indicatorColor: Colors.grey.shade400,
               tabs: [
             Column(
-              children: const [
+              children:  [
                 Icon(
                   Icons.shopping_basket_outlined,
-                  color: Colors.black,
-                  size: 30,
+
                 ),
-                Text(
+                 Text(
                   'My Ads',
-                  style: TextStyle(color: Colors.black),
+                  style: textTheme.bodyText1,
                 )
               ],
             ),
             Column(
-              children: const [
+              children:  [
                 Icon(
                   Icons.favorite_outline,
-                  color: Colors.black,
-                  size: 30,
+
                 ),
-                Text(
+                 Text(
                   'My Favourites',
-                  style: TextStyle(color: Colors.black),
+                  style: textTheme.bodyText1,
                 )
               ],
             ),
-          ]),
+          ]
+          ),
         ),
         body: SafeArea(
           child: TabBarView(
@@ -61,13 +62,16 @@ class AdsScreen extends StatelessWidget {
                   height: size.height,
                   width: size.width,
                   child: GridView.builder(
-                      itemCount: 4,
+                    padding: const EdgeInsets.only(top: 20,left: 15,right: 15).r,
+                    physics: const BouncingScrollPhysics(),
+                      itemCount: 10,
                       gridDelegate:
                       const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
-                          mainAxisSpacing: 10,
+                          mainAxisSpacing: 40,
                           crossAxisSpacing: 10,
-                          childAspectRatio: .6),
+                        childAspectRatio: .6
+                         ),
                       itemBuilder: (context, index) {
                         return const GridSingleProduct();
                       }),
@@ -75,39 +79,33 @@ class AdsScreen extends StatelessWidget {
                 SizedBox(
                   height: MediaQuery.of(context).size.height,
                   child: ListView.builder(
-                      itemCount: 4,
-                      padding: EdgeInsets.only(top: 20,left: 20,right: 20,),
+                      physics: const BouncingScrollPhysics(),
+                      itemCount: 10,
+                      padding: const EdgeInsets.only(top: 10,left: 20,right: 20,).r,
                       itemBuilder: (context, index) {
                         return Container(
-                          margin: EdgeInsets.only(bottom: 10),
-                          height: 85,
+                          margin: const EdgeInsets.only(bottom: 10).r,
+                          height: 90.h,
 
-                          child: Card(
-                            elevation: 6,
+                          child:  Card(
+                            elevation: 3,
                               child: ListTile(
-                                leading: Image(
-                                  image: AssetImage("assets/watch1.png"),
+                                leading: const Image(
+                                  image: AssetImage(watchImage),
                                   fit: BoxFit.cover,
                                 ),
                                 title:  Text(
                                   "Apple Watch",
                                   overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w600),
+                                  style: textTheme.bodyMedium,
                                 ),
                                 subtitle:  Text(
                                   "Series 6 . Red",
-                                  style: TextStyle(
-                                      color: Colors.grey,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w600),
+                                  style: textTheme.titleMedium!.copyWith(fontSize: 15),
                                 ),
                                 trailing: Text(
                                   "\$ 100",
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w600),
+                                  style: textTheme.bodyMedium,
                                 ),
 
 

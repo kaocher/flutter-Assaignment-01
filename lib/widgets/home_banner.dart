@@ -1,43 +1,56 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_assaignment_1/utils/const.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 class HomeBanner extends StatelessWidget {
-  const HomeBanner({Key? key}) : super(key: key);
+
+  final List<Color> bannerColor=[
+    Colors.deepOrange,
+    Colors.purpleAccent,
+    Colors.redAccent,
+    Colors.blue,
+    Colors.blueGrey,
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return  SizedBox(
-      height: 180,
+    final size = MediaQuery.of(context).size;
+    var textTheme = Theme.of(context).textTheme;
+    return SizedBox(
+      height: 180.h,
+      // height: size.height * .20,
       child: ListView.builder(
-          itemCount: 5,
+          itemCount: bannerColor.length,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
             return Container(
-              height: 200,
-              width: 350,
-              margin: const EdgeInsets.only(right: 20),
+              height: 180.h,
+              width: 340.w,
+              margin: const EdgeInsets.only(right: 20).r,
               decoration: BoxDecoration(
-                  color: Colors.deepOrange,
-                  borderRadius: BorderRadius.circular(20)),
+                  color: bannerColor[index],
+                  borderRadius: BorderRadius.circular(20).r
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Padding(
-                    padding: EdgeInsets.only(top: 15, left: 10),
-                    child: Text(
+                children:  [
+                   Padding(
+                    padding: const EdgeInsets.only(top: 15, left: 20).r,
+                    child:  Text(
                       "40% off During\nCovid 19",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 25,
-                          fontWeight: FontWeight.w700),
+                      style: textTheme.bodyLarge,
                     ),
                   ),
                   Align(
                     alignment: Alignment.bottomRight,
                     child: SizedBox(
-                      height: 80,
-                      width: 80,
-                      child:  Image(
-                        image: AssetImage("assets/watch1.png"),
+                      height: 80.h,
+                      width: 80.h,
+                      // height: size.height * .09,
+                      // width: size.height * .09,
+
+                      child:  const Image(
+                        image: AssetImage(watchImage),
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -45,7 +58,8 @@ class HomeBanner extends StatelessWidget {
                 ],
               ),
             );
-          }),
+          }
+          ),
     );
   }
 }

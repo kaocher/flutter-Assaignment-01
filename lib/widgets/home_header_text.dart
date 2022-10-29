@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_assaignment_1/utils/const.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeHeaderText extends StatelessWidget {
   const HomeHeaderText({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var textTheme = Theme.of(context).textTheme;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: const [
-        Text(
-          "Hello Kaocher",
-          style: TextStyle(fontSize: 40, fontWeight: FontWeight.w700),
+      children:  [
+        Text( headerText1,
+          style: textTheme.titleLarge,
         ),
         SizedBox(
-          height: 10,
+          height: 10.h,
         ),
-        Text(
-          "Let's gets something?",
-          style: TextStyle(
-              color: Colors.black54, fontWeight: FontWeight.w600, fontSize: 18),
+        Text( headerText2,
+          style: textTheme.titleMedium
         ),
       ],
     );

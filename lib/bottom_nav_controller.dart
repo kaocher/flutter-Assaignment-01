@@ -4,6 +4,7 @@ import 'package:flutter_assaignment_1/screen/ads_screen.dart';
 import 'package:flutter_assaignment_1/screen/chat_screen.dart';
 import 'package:flutter_assaignment_1/screen/home_screen.dart';
 import 'package:flutter_assaignment_1/screen/profile_screen.dart';
+import 'package:flutter_assaignment_1/widgets/bottom_nav_item.dart';
 
 class BottomNavController extends StatefulWidget {
   const BottomNavController({Key? key}) : super(key: key);
@@ -11,8 +12,8 @@ class BottomNavController extends StatefulWidget {
   @override
   State<BottomNavController> createState() => _BottomNavControllerState();
 }
- final _screen =[
-   HomeScreen(),
+ const _screen =[
+    HomeScreen(),
    AdsScreen(),
    AddScreen(),
    ChatScreen(),
@@ -34,29 +35,29 @@ class _BottomNavControllerState extends State<BottomNavController> {
         selectedItemColor: Colors.deepPurpleAccent,
         unselectedItemColor: Colors.black45,
         showUnselectedLabels: true,
-        items: const[
-          BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined,
-              // color: Colors.black,
-              ),
-          label: "Home"
+        backgroundColor: Colors.black,
+        items: [
+          bottomNavItem(
+              icon: Icons.home_outlined,
+              label: "Home"
           ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_basket_outlined),
+          bottomNavItem(
+              icon: Icons.shopping_basket_outlined,
               label: "Ads"
           ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.add_circle_outline),
+          bottomNavItem(
+              icon: Icons.add_circle_outline,
               label: "Add"
           ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.whatsapp_outlined),
+          bottomNavItem(
+              icon: Icons.whatsapp_outlined,
               label: "Chat"
           ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.person_outline),
-              label: "Profile"
+          bottomNavItem(
+              icon: Icons.person_outline,
+              label: "Account"
           ),
+
         ],
 
       ),
