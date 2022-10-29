@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         return  MaterialApp(
           theme: AppTheme.lightTheme(context),
           darkTheme: AppTheme.darkTheme(context),
-          themeMode: ThemeMode.dark,
+          themeMode: ThemeMode.system,
           debugShowCheckedModeBanner: false,
           home: const BottomNavController(),
         );

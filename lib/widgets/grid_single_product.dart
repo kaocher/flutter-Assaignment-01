@@ -57,7 +57,7 @@ class GridSingleProduct extends StatelessWidget {
                             ),
                             Text(
                               "Series 6 . Red",
-                              style: textTheme.titleMedium!.copyWith(fontSize: 15)
+                              style: textTheme.titleMedium!.copyWith(fontSize: 15.sp)
                             ),
                             Text(
                               "\$ 100",

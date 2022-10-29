@@ -16,7 +16,6 @@ class AdsScreen extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-
           title:  Text(
             "My Ads",
             style: textTheme.bodyLarge,
@@ -35,7 +34,7 @@ class AdsScreen extends StatelessWidget {
                 ),
                  Text(
                   'My Ads',
-                  style: textTheme.bodyText1,
+                  style: textTheme.bodyMedium,
                 )
               ],
             ),
@@ -47,7 +46,7 @@ class AdsScreen extends StatelessWidget {
                 ),
                  Text(
                   'My Favourites',
-                  style: textTheme.bodyText1,
+                  style: textTheme.bodyMedium,
                 )
               ],
             ),
@@ -85,7 +84,7 @@ class AdsScreen extends StatelessWidget {
                       itemBuilder: (context, index) {
                         return Container(
                           margin: const EdgeInsets.only(bottom: 10).r,
-                          height: 90.h,
+                          height: 80.h,
 
                           child:  Card(
                             elevation: 3,
@@ -101,7 +100,7 @@ class AdsScreen extends StatelessWidget {
                                 ),
                                 subtitle:  Text(
                                   "Series 6 . Red",
-                                  style: textTheme.titleMedium!.copyWith(fontSize: 15),
+                                  style: textTheme.titleMedium!.copyWith(fontSize: 15.sp),
                                 ),
                                 trailing: Text(
                                   "\$ 100",

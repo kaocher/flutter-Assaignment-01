@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_assaignment_1/utils/colors.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'app_text_theme.dart';
 
@@ -12,11 +13,11 @@ class AppTheme {
       primarySwatch: Colors.deepPurple,
       scaffoldBackgroundColor: lightBgColor,
 
-      appBarTheme: const AppBarTheme(
+      appBarTheme:  AppBarTheme(
         color: Colors.white,
         elevation: 0,
         iconTheme: IconThemeData(color: Colors.black),
-        toolbarHeight: 100,
+        toolbarHeight: 100.h,
       ),
 
       tabBarTheme: const TabBarTheme(
@@ -44,31 +45,31 @@ class AppTheme {
 
       cardColor: lightCardColor,
 
-      iconTheme: const IconThemeData(
+      iconTheme:  const IconThemeData(
         color: Colors.black,
         size: 30,
       ),
 
         ////////////////Light Text Theme///////////////
-        textTheme: const TextTheme(
+        textTheme:  TextTheme(
             titleLarge: TextStyle(
               color: Colors.black,
-              fontSize: 35,
+              fontSize: 35.sp,
               fontWeight: FontWeight.w700,
             ),
           titleMedium: TextStyle(
             color: Colors.black54,
-            fontSize: 20,
+            fontSize: 20.sp,
             fontWeight: FontWeight.w700,
           ),
           bodyLarge: TextStyle(
             color: Colors.black,
-            fontSize: 24,
+            fontSize: 24.sp,
             fontWeight: FontWeight.w600,
           ),
           bodyMedium:  TextStyle(
               color: Colors.black,
-              fontSize: 20,
+              fontSize: 20.sp,
               fontWeight: FontWeight.w500),
         ),
     );
@@ -82,11 +83,11 @@ class AppTheme {
       primarySwatch: Colors.deepPurple,
       scaffoldBackgroundColor: darkBgColor,
 
-      appBarTheme: const AppBarTheme(
+      appBarTheme:  AppBarTheme(
         color: darkBgColor,
         elevation: 0,
-        iconTheme: IconThemeData(color: Colors.white),
-        toolbarHeight: 100,
+        iconTheme: const IconThemeData(color: Colors.white),
+        toolbarHeight: 100.h,
       ),
 
       tabBarTheme: const TabBarTheme(
@@ -120,25 +121,25 @@ class AppTheme {
     ),
 
     //////////Dark Text Theme//////////
-      textTheme: const TextTheme(
+      textTheme:  TextTheme(
         titleLarge: TextStyle(
           color: Colors.white,
-          fontSize: 35,
+          fontSize: 35.sp,
           fontWeight: FontWeight.w700,
         ),
         titleMedium: TextStyle(
           color: Colors.white54,
-          fontSize: 20,
+          fontSize: 20.sp,
           fontWeight: FontWeight.w700,
         ),
         bodyLarge: TextStyle(
           color: Colors.white,
-          fontSize: 24,
+          fontSize: 24.sp,
           fontWeight: FontWeight.w600,
         ),
         bodyMedium:  TextStyle(
             color: Colors.white,
-            fontSize: 20,
+            fontSize: 20.sp,
             fontWeight: FontWeight.w500),
       ),
     );
